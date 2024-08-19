@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Rizaldi Pardede</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Slick Carousel CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            
+        }
+        .header {
+            background: linear-gradient(180deg, #0F3460, #1F6BC6);
+            color: white;
+            position: relative;
+            overflow: hidden;
+            padding: 6rem 0 8rem;
+        }
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .profile-image-container {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: visible;
+            border: 8px solid rgba(255,255,255,0.2);
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        .profile-image {
+            position: absolute;
+            top: -10px;
+            left: -30px;
+            width: 260px;
+            height: auto;
+            
+        }
+        .header-text h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 4px 4px 8px rgba(0,0,0,0.3);
+        }
+        .header-text p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .header-wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        .header-wave svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 150px;
+            transform: scaleY(-1);
+        }
+        .header-wave .shape-fill {
+            fill: #0F3460;
+        }
+        .section-title {
+            color: #E94560 ;
+            border-bottom: 2px solid #3282b8;
+            padding-bottom: 10px;
+            margin-bottom: 40px;
+            font-weight: bold;
+            
+        }
+        
+        .skill-item, .certificate-item, .project-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 10px;
+            box-shadow: 0 8px 12px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            width: 100%;
+            height: 100%;
+            min-height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+        }
+        .skill-item:hover, .certificate-item:hover, .project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1)
+        }
+        
+        .skill-item h5, .certificate-item h5, .project-item h5 {
+            margin-bottom: 10px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .skill-item p, .certificate-item p, .project-item p {
+            flex-grow: 1;
+            margin-bottom: 10px;
+        }
+    
+        .skill-item img, .certificate-item img, .project-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+    
+        .skill-item h6, .certificate-item h6, .project-item h6 {
+            margin-bottom: 50px;
+        }
+    
+        .skill-item button, .certificate-item button, .project-item button {
+            margin-top: auto;
+        }
+        
+        .btn-primary {
+            background-color: #E94560;
+            border-color: #b93a50;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #0f4c75;
+            border-color: #0f4c75;
+        }
+        .section {
+            
+            padding: 60px 0;
+        }
+        .contact-icon {
+            font-size: 2rem;
+            margin: 0 15px;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .contact-icon:hover {
+            color: #3282b8;
+        }
+        footer {
+            background-color: #0F3460;
+            color: white;
+            padding: 40px 0;
+        }
+        .skill-slider, .certificate-slider, .project-slider {
+            width: 100%;
+            margin: 0 auto;
+        }
+        
+        .slick-track {
+           
+            display: flex !important;
+            align-items: stretch;
+        }
+        .slick-slide {
+            height: auto;
+            display: flex !important;
+            justify-content: center;
+            align-items: stretch;
+        }
+        @media (min-width: 769px) {
+            
+            .header {
+            
+            padding: 3rem 0 4rem;
+            }
+            .header-content {
+                flex-direction: row;
+                
+            }
+            .profile-image-container {
+                margin-bottom: 0;
+                margin-right: 2rem;
+                top: 30px;
+                left: -70px;
+                width: 350px;
+                height: 350px;
+            }
+            .header-text {
+                text-align: left;
+            }
+            .header-text h1 {
+                font-size: 3rem;
+            }
+            .header-text p {
+                font-size: 1.4rem;
+            }
+            .profile-image {
+            position: absolute;
+            top: -10px;
+            left: -90px;
+            width: 500px;
+            height: auto;
+            }
+            
+            
+            
+            
+        }
+        @media (max-width: 768px) {
+            .header {
+                padding: 6rem 0 8rem;
+            }
+            .header-content {
+                flex-direction: column;
+                text-align: left;
+            }
+            .profile-image-container {
+                top: 80px;
+            }
+            .header-text h1 {
+                position: relative;
+                font-size: 2rem;
+                top: -290px;
+            }
+            .header-text p {
+                position: relative;
+                font-size: 1.2rem;
+                top: -290px;
+            }
+            .profile-image {
+            position: absolute;
+            top: -10px;
+            left: -150px;
+            width: 500px;
+            height: auto;
+            }
+        }
+    
+        @media (max-width: 425px) {
+            .header {
+                padding: 6rem 0 8rem;
+            }
+            .header-content {
+                flex-direction: column;
+                text-align: left;
+            }
+            .profile-image-container {
+                top: 150px;
+            }
+            .header-text h1 {
+                position: relative;
+                font-size: 2rem;
+                top: -290px;
+            }
+            .header-text p {
+                position: relative;
+                font-size: 1.2rem;
+                top: -290px;
+            }
+            .profile-image {
+            position: absolute;
+            top: -30px;
+            left: -150px;
+            width: 500px;
+            height: auto;
+            }
+        }
+        @media (max-width: 283px) {
+            .header {
+                padding: 6rem 0 8rem;
+            }
+            .header-content {
+                flex-direction: column;
+                text-align: left;
+            }
+            .profile-image-container {
+                top: 170px;
+            }
+            .header-text h1 {
+                position: relative;
+                font-size: 2rem;
+                top: -290px;
+            }
+            .header-text p {
+                position: relative;
+                font-size: 1.2rem;
+                top: -290px;
+            }
+            .profile-image {
+            position: absolute;
+            top: -30px;
+            left: -150px;
+            width: 500px;
+            height: auto;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <header class="header" data-aos="fade-up">
+        <div class="container">
+            <div class="header-content">
+                <div class="profile-image-container" data-aos="fade-up" >
+                    <img src="./profile1.png" alt="Rizaldi Pardede" class="profile-image">
+                </div>
+                <div class="header-text" data-aos="flip-right">
+                    <h1><span style="font-weight: bold;">RIZALDI <span style="color: #E94560;">PARDEDE</span></span></h1>
+                    <p>Fresh graduate Teknologi Informasi GPA 3.84/4</p>
+                </div>
+            </div>
+        </div>
+        <div class="header-wave">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </header>
+
+    <div class="section" data-aos="fade-up">
+        <div class="container">
+            <section id="about">
+                <h2 class="section-title">About me</h2>
+                <p>Fresh graduate with a Bachelor's degree in Information Technology from Universitas Brawijaya, specializing in Android application development and system integration. Experienced in the Mobile Development Path at Bangkit Academy 2023, led by Google, Tokopedia, Gojek, and Traveloka. Possesses hands-on experience in developing Android applications using Kotlin and Java, with additional skills in system integration and the Internet of Things (IoT). Able to work effectively in a team environment.</p>
+            </section>
+        </div>
+    </div>
+
+    <div class="section bg-light" data-aos="fade-up">
+        <div class="container">
+            <section id="keahlian">
+                <h2 class="section-title">Skill</h2>
+                <div class="skill-slider">
+                    <div>
+                        <div class="skill-item">
+                            <h5>Android Development</h5>
+                            <p>Develop efficient and user-friendly Android applications using Kotlin and Java languages.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="skill-item">
+                            <h5>IoT</h5>
+                            <p>Design and implement IoT solutions, connecting physical devices with networks and analyzing data.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="skill-item">
+                            <h5>Web service</h5>
+                            <p>Web service is a method of making applications communicate and interact with each other over a network, typically the Internet. </p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="skill-item">
+                            <h5>System integration</h5>
+                            <p>System integration is the process of bringing together different components or subsystems into a single, unified system. These components can be hardware, software, or even smaller systems. The main goal of system integration is to create a larger, more complex system that can function as a single unit.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Tambahkan keahlian lainnya dengan struktur yang sama -->
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+    
+
+    <div class="section" data-aos="fade-up">
+        <div class="container">
+            <section id="pengalaman-sertifikat">
+                <h2 class="section-title">Experience and Certificates</h2>
+                <div class="certificate-slider">
+                    <div>
+                        <div class="certificate-item">
+                            <img src="bangkit.png" alt="Mobile Development Path" class="img-fluid mb-3">
+                            <h5>Mobile Development Path</h5>    
+                            <p>Bangkit Academy led by Google, Tokopedia, Gojek, & Traveloka</p>
+                            <button class="btn btn-primary btn-sm" onclick="window.open('https://contributors.bangkit.academy/home', '_blank');">
+                                More Information
+                            </button>
+                        </div>
+                
+                    </div>
+                    <div>
+                        <div class="certificate-item">
+                            <img src="robotiik.png" alt="Programming Division" class="img-fluid mb-3">
+                            <h5>Programming Division</h5>    
+                            <p>Robotiik Faculty of Computer Science, Brawijaya University</p>
+                            <button class="btn btn-primary btn-sm" onclick="window.open('https://www.instagram.com/robo_tiik/?hl=id', '_blank');">
+                                More Information
+                            </button>
+                        </div>
+                
+                    </div>
+                    
+                    <div>
+                        <div class="certificate-item">
+                            <img src="sertifikat_Belajar Membuat Aplikasi Android dengan Jetpack compose.png" alt="Jetpack Compose Sertif" class="img-fluid mb-3">
+                            <h5>Sertifikat Belajar Membuat Aplikasi Android dengan Jetpack compose</h5>    
+                            <p>Dicoding Indonesia</p>
+                            <button class="btn btn-primary btn-sm" onclick="window.open('https://www.dicoding.com/certificates/RVZKORQ94PD5', '_blank');">
+                                More Information
+                            </button>
+                        </div>
+                
+                    </div>
+                    <div>
+                        <div class="certificate-item">
+                            <img src="sertifikat_Belajar Pengembangan Aplikasi Android Intermediate.png" alt="Intermediate Sertif" class="img-fluid mb-3">
+                            <h5>Sertifikat Belajar Pengembangan Aplikasi Android Intermediate</h5>    
+                            <p>Dicoding Indonesia</p>
+                            <button class="btn btn-primary btn-sm" onclick="window.open('https://www.dicoding.com/certificates/72ZD8792VZYW', '_blank');">
+                                More Information
+                            </button>
+                        </div>
+                
+                    </div>
+                    <div>
+                        <div class="certificate-item">
+                            <img src="sertifikat_Belajar Fundamental Aplikasi Android.png" alt="Fundamental Sertif" class="img-fluid mb-3">
+                            <h5>Sertifikat Belajar Fundamental Aplikasi Android</h5>    
+                            <p>Dicoding Indonesia</p>
+                            <button class="btn btn-primary btn-sm" onclick="window.open('https://www.dicoding.com/certificates/MEPJV5V24P3V', '_blank');">
+                                More Information
+                            </button>
+                        </div>
+                
+                    </div>
+                    <div>
+                        <div class="certificate-item">
+                            <img src="sertifikat_Belajar Membuat Aplikasi Android Untuk Pemula.png" alt="Fundamental Sertif" class="img-fluid mb-3">
+                            <h5>Sertifikat Belajar Membuat Aplikasi Android Untuk Pemula</h5>    
+                            <p>Dicoding Indonesia</p>
+                            <button class="btn btn-primary btn-sm" onclick="window.open('https://www.dicoding.com/certificates/1RXYO8YOMPVM', '_blank');">
+                                More Information
+                            </button>
+                        </div>
+                
+                    </div>
+                    <div>
+                        <div class="certificate-item">
+                            <img src="sertifikat_Memulai Pemrograman Dengan Kotlin.png" alt="Fundamental Sertif" class="img-fluid mb-3">
+                            <h5>Sertifikat Memulai Pemrograman Dengan Kotlin</h5>    
+                            <p>Dicoding Indonesia</p>
+                            <button class="btn btn-primary btn-sm" onclick="window.open('https://www.dicoding.com/certificates/RVZKKYEWOZD5', '_blank');">
+                                More Information
+                            </button>
+                        </div>
+                
+                    </div>
+                    <div>
+                        <div class="certificate-item">
+                            <img src="sertifikat_Belajar Dasar UX Design.png" alt="Fundamental Sertif" class="img-fluid mb-3">
+                            <h5>Sertifikat Belajar Dasar UX Design</h5>    
+                            <p>Dicoding Indonesia</p>
+                            <button class="btn btn-primary btn-sm" onclick="window.open('https://www.dicoding.com/certificates/0LZ0926ERZ65', '_blank');">
+                                More Information
+                            </button>
+                        </div>
+                
+                    </div>
+                    <div>
+                        <div class="certificate-item">
+                            <img src="sertifikat_Memulai dasar pemrograman untuk menjadi pengembang software.png" alt="Fundamental Sertif" class="img-fluid mb-3">
+                            <h5>Sertifikat Memulai dasar pemrograman untuk menjadi pengembang software</h5>    
+                            <p>Dicoding Indonesia</p>
+                            <button class="btn btn-primary btn-sm" onclick="window.open('https://www.dicoding.com/certificates/ERZR0RRKWXYV', '_blank');">
+                                More Information
+                            </button>
+                        </div>
+                
+                    </div>
+                    <div>
+                        <div class="certificate-item">
+                            <img src="sertifikat_Belajar Prinsip Pemrograman SOLID.png" alt="Fundamental Sertif" class="img-fluid mb-3">
+                            <h5>Sertifikat Belajar Prinsip Pemrograman SOLID</h5>    
+                            <p>Dicoding Indonesia</p>
+                            <button class="btn btn-primary btn-sm" onclick="window.open('https://www.dicoding.com/certificates/81P237QK8XOY', '_blank');">
+                                More Information
+                            </button>
+                        </div>
+                
+                    </div>
+                    <div>
+                        <div class="certificate-item">
+                            <img src="sertifikat_Pengenalan ke Logika Pemrograman (Programming Logic 101).png" alt="Fundamental Sertif" class="img-fluid mb-3">
+                            <h5>Sertifikat Pengenalan ke Logika Pemrograman (Programming Logic 101)</h5>    
+                            <p>Dicoding Indonesia</p>
+                            <button class="btn btn-primary btn-sm" onclick="window.open('https://www.dicoding.com/certificates/MEPJK442LX3V', '_blank');">
+                                More Information
+                            </button>
+                        </div>
+                
+                    </div>
+                    <div>
+                        <div class="certificate-item">
+                            <img src="sertifikat_Belajar Dasar Git dengan GitHub.png" alt="Fundamental Sertif" class="img-fluid mb-3">
+                            <h5>Sertifikat Belajar Dasar Git dengan GitHub</h5>    
+                            <p>Dicoding Indonesia</p>
+                            <button class="btn btn-primary btn-sm" onclick="window.open('https://www.dicoding.com/certificates/07Z6G242RXQR', '_blank');">
+                                More Information
+                            </button>
+                        </div>
+                
+                    </div>
+
+                    <div>
+                        <div class="certificate-item">
+                            <img src="staff ddm.png" alt="DDM IT-Mosphere" class="img-fluid mb-3">
+                            <h5>Design, Documentation and Multimedia</h5>    
+                            <p>IT-Mosphere Brawijaya University Information Technology Study Program</p>
+                            <button class="btn btn-primary btn-sm" onclick="window.open('https://www.instagram.com/itmosphere2022?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', '_blank');">
+                                More Information
+                            </button>
+                        </div>
+                
+                    </div>
+                    <!-- Tambahkan sertifikat lainnya dengan struktur yang sama -->
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="section bg-light" >
+        <div class="container" >
+            <section id="project">
+                <h2 class="section-title">My Projects</h2>
+                <div class="project-slider">
+                    <div>
+                        <div class="project-item">
+                            <img src="motorsecure.png" alt="Project 1" class="img-fluid mb-3">
+                            <h5>MotorSecure application</h5>
+                            <p>Research project for a motorbike monitoring application system using IoT-based Kotlin programming with a GPS module as security monitoring for Roganda Rental Motorbike rentals</p>
+                            <h6><span style="color: #E94560;">Skills: </span> 
+                                <span style="font-weight: bold;">Kotlin · Android Development · Internet of Things (IoT) · C++ </span></h6>
+                            <button class="btn btn-primary btn-sm" onclick="window.open('https://github.com/RizaldiPardede/MotorSecure', '_blank');">
+                                More Information
+                            </button>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="project-item">
+                            <img src="allapps.png" alt="Project 2" class="img-fluid mb-3">
+                            <h5>Acute Lymphoblastic Leukemia Aplication</h5>
+                            <p>This is an application project for the Bangkit capstone project, where this application is integrated with a cloud service and machine learning which functions to check blood on a microscope by just taking a picture.</p>
+                            <h6><span style="color: #E94560;">Skills: </span> 
+                                <span style="font-weight: bold;">Android Development · Kotlin · Machine Learning · Cloud Computing</span></h6>
+                            <button class="btn btn-primary btn-sm" onclick="window.open('https://github.com/RizaldiPardede/DiagnoseALLApps/tree/main?tab=readme-ov-file');">
+                                More Information
+                            </button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="project-item">
+                            <img src="sinongkiapps.png" alt="Project 3" class="img-fluid mb-3">
+                            <h5>Sinongki Application</h5>
+                            <p>Sinongki is a system integration project that utilizes web services, mobile apps and websites to create a cafe ordering system</p>
+                            <h6><span style="color: #E94560;">Skills: </span> 
+                                <span style="font-weight: bold;">Java · Mobile Application Development · IT Integration · Backend/webservices</span></h6>
+                            <button class="btn btn-primary btn-sm" onclick="window.open('https://github.com/RizaldiPardede/SinongkiApps', '_blank');">
+                                More Information
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Tambahkan proyek lainnya dengan struktur yang sama -->
+                </div>
+            </section>
+        </div>
+    </div>
+
+    
+
+    <footer >
+        <div class="container text-center" >
+            <h3 class="mb-4">Contact me</h3>
+            <div>
+                <a href="mailto:rizaldipardede@gmail.com" class="contact-icon"><i class="fas fa-envelope"></i></a>
+                <a href="https://linkedin.com/in/rizaldi-pardede-7b5708261" target="_blank" class="contact-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/RizaldiPardede" target="_blank" class="contact-icon"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Slick Carousel JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        
+        
+    </script>
+    <!-- Custom JS -->
+    <script>
+        $(document).ready(function(){
+            $('.skill-slider, .certificate-slider, .project-slider').slick({
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                dots: true,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                adaptiveHeight: true,
+                responsive: [
+                    
+                    {
+                        breakpoint: 992,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+            
+        });
+
+        
+    </script>
+</body>
+</html>
